@@ -115,20 +115,18 @@ nav{
 
 .hero{
   min-height:570px;
-
   position:relative;
-
   display:flex;
   align-items:center;
 
   background:
     linear-gradient(
       90deg,
-      rgba(0,0,0,.92),
-      rgba(0,0,0,.60),
-      rgba(0,0,0,.25)
+      rgba(0,0,0,.88),
+      rgba(0,0,0,.50),
+      rgba(0,0,0,.20)
     ),
-    url("121D44CC-EECA-4A20-B5DD-EAFECA5A629A.png");
+    url("https://images.unsplash.com/photo-1538511248183-2e9aa2f112c6?auto=format&fit=crop&w=1800&q=85");
 
   background-size:cover;
   background-position:center;
@@ -394,26 +392,63 @@ nav{
   height:180px;
 
   border:1px solid #343434;
-
   border-radius:12px;
-
   overflow:hidden;
-
   position:relative;
 
-  background-image:
-    linear-gradient(
-      0deg,
-      rgba(0,0,0,.9),
-      rgba(0,0,0,.15)
-    ),
-    url("121D44CC-EECA-4A20-B5DD-EAFECA5A629A.png");
-
   background-size:cover;
-
   background-position:center;
 
   transition:.25s;
+}
+
+/* TABLE 1 */
+.table-card:nth-child(1){
+  background-image:
+    linear-gradient(
+      0deg,
+      rgba(0,0,0,.88),
+      rgba(0,0,0,.15)
+    ),
+    url("https://images.unsplash.com/photo-1611987101912-9e0b92a560a8?auto=format&fit=crop&w=1000&q=85");
+}
+
+/* TABLE 2 */
+.table-card:nth-child(2){
+  background-image:
+    linear-gradient(
+      0deg,
+      rgba(0,0,0,.88),
+      rgba(0,0,0,.15)
+    ),
+    url("https://images.unsplash.com/photo-1713659161795-b9e02ec28c58?auto=format&fit=crop&w=1000&q=85");
+}
+
+/* TABLE 3 */
+.table-card:nth-child(3){
+  background-image:
+    linear-gradient(
+      0deg,
+      rgba(0,0,0,.88),
+      rgba(0,0,0,.15)
+    ),
+    url("https://images.unsplash.com/photo-1538511248183-2e9aa2f112c6?auto=format&fit=crop&w=1000&q=85");
+}
+
+/* TABLE 4 */
+.table-card:nth-child(4){
+  background-image:
+    linear-gradient(
+      0deg,
+      rgba(0,0,0,.88),
+      rgba(0,0,0,.15)
+    ),
+    url("https://images.unsplash.com/photo-1713659161795-b9e02ec28c58?auto=format&fit=crop&w=1000&q=85");
+}
+
+.table-card:hover{
+  transform:translateY(-5px);
+  border-color:var(--red);
 }
 
 .table-card:nth-child(2){
