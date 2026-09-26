@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>EMPIRIOR — Billard & Réservation</title>
 
 <style>
@@ -12,10 +13,14 @@
   padding:0;
 }
 
+html{
+  scroll-behavior:smooth;
+}
+
 body{
   font-family:Arial,Helvetica,sans-serif;
-  background:#05090b;
-  color:white;
+  background:#050505;
+  color:#fff;
 }
 
 a{
@@ -23,17 +28,38 @@ a{
   text-decoration:none;
 }
 
-/* NAVBAR */
+/* =========================
+   COULEURS
+========================= */
+
+:root{
+  --red:#e5092f;
+  --red-light:#ff1744;
+  --black:#050505;
+  --dark:#0b0b0c;
+  --card:#111214;
+  --border:#29292b;
+  --gray:#9b9b9b;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
 nav{
-  height:80px;
-  background:#030608;
-  border-bottom:1px solid #1c292d;
+  height:82px;
+  background:#050505;
+  border-bottom:1px solid #242424;
+
   display:flex;
   align-items:center;
   justify-content:space-between;
+
   padding:0 5%;
+
   position:relative;
-  z-index:10;
+  z-index:20;
 }
 
 .logo{
@@ -43,231 +69,386 @@ nav{
 }
 
 .logo span{
-  color:#35e56d;
+  color:var(--red);
 }
 
 .menu{
   display:flex;
-  gap:45px;
+  gap:38px;
   align-items:center;
 }
 
 .menu a{
-  font-size:15px;
-  color:#eee;
-  padding:30px 0;
+  color:#ddd;
+  font-size:14px;
+  transition:.2s;
 }
 
 .menu a:hover{
-  color:#35e56d;
+  color:var(--red);
+}
+
+.menu a:first-child{
+  color:var(--red);
 }
 
 .login{
-  border:1px solid #35e56d;
-  color:#35e56d;
-  padding:12px 24px;
+  border:1px solid var(--red);
+  color:var(--red);
+
+  padding:11px 23px;
+
   border-radius:8px;
+
+  transition:.2s;
 }
 
-/* HERO */
+.login:hover{
+  background:var(--red);
+  color:#fff;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
 .hero{
-  min-height:510px;
+  min-height:570px;
+
   position:relative;
+
+  display:flex;
+  align-items:center;
+
   background:
-  linear-gradient(90deg,rgba(0,0,0,.88),rgba(0,0,0,.25)),
-  url("https://images.unsplash.com/photo-1606925797300-0b35e9d185")
-  center/cover;
+    linear-gradient(
+      90deg,
+      rgba(0,0,0,.92),
+      rgba(0,0,0,.60),
+      rgba(0,0,0,.25)
+    ),
+    url("billard-bg.jpg");
+
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
 }
 
 .hero-content{
-  max-width:700px;
-  padding:75px 9%;
+  max-width:720px;
+  padding:70px 8%;
 }
 
 .small-title{
-  color:#35e56d;
-  letter-spacing:8px;
+  color:var(--red);
+  letter-spacing:7px;
   font-weight:bold;
-  font-size:18px;
-  margin-bottom:12px;
+  font-size:17px;
+  margin-bottom:15px;
 }
 
 .hero h1{
-  font-size:58px;
+  font-size:64px;
   line-height:1;
   font-weight:900;
 }
 
 .hero h1 span{
-  color:#35e56d;
+  color:var(--red);
 }
 
 .hero p{
   margin-top:18px;
-  font-size:25px;
+  font-size:24px;
   color:#ddd;
+}
+
+.hero h2{
+  margin-top:35px;
+  font-size:35px;
+  line-height:1.15;
+}
+
+.hero h2 span{
+  color:var(--red);
 }
 
 .features{
   display:flex;
-  gap:45px;
+  flex-wrap:wrap;
+  gap:30px;
   margin-top:35px;
+}
+
+.feature{
+  display:flex;
+  align-items:center;
+  gap:9px;
   font-size:14px;
 }
 
-.features div{
-  display:flex;
-  gap:10px;
-  align-items:center;
+.feature-icon{
+  color:var(--red);
+  font-size:20px;
 }
 
-/* RESERVATION BAR */
+
+/* =========================
+   RESERVATION
+========================= */
+
 .booking{
   width:90%;
-  margin:-70px auto 0;
+
+  margin:-45px auto 0;
+
   position:relative;
-  z-index:5;
-  background:#10181c;
-  border:1px solid #344248;
-  border-radius:15px;
-  padding:16px;
+  z-index:10;
+
+  background:#101112;
+
+  border:1px solid #353535;
+
+  border-radius:14px;
+
+  padding:15px;
+
   display:grid;
-  grid-template-columns:1.1fr 1fr 1.1fr 1fr 1.1fr 1.1fr 170px;
-  gap:10px;
+
+  grid-template-columns:
+    1.1fr
+    1fr
+    1.1fr
+    1fr
+    1.1fr
+    1.1fr
+    150px;
+
+  gap:9px;
+
+  box-shadow:0 20px 50px rgba(0,0,0,.6);
 }
 
 .field{
-  background:#172126;
-  border-radius:10px;
-  padding:12px 15px;
+  background:#18191b;
+
+  border-radius:9px;
+
+  padding:12px 14px;
 }
 
 .field small{
   display:block;
-  color:#aaa;
-  margin-bottom:5px;
+
+  color:#888;
+
+  margin-bottom:6px;
+
+  font-size:12px;
 }
 
 .field strong{
-  font-size:15px;
+  font-size:14px;
 }
 
 .book-btn{
-  background:#35e56d;
-  color:#031007;
+  background:var(--red);
+
+  color:#fff;
+
   border:0;
-  border-radius:10px;
-  font-size:16px;
+
+  border-radius:9px;
+
   font-weight:bold;
+
   cursor:pointer;
+
+  transition:.2s;
 }
 
 .book-btn:hover{
-  background:#55f585;
+  background:var(--red-light);
+  transform:translateY(-2px);
 }
 
-/* INFO */
+
+/* =========================
+   INFO
+========================= */
+
 .info{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:30px;
   width:90%;
-  margin:30px auto 55px;
-  padding:25px 0;
+
+  margin:auto;
+
+  padding:45px 0;
+
+  display:grid;
+
+  grid-template-columns:repeat(4,1fr);
+
+  gap:30px;
+
+  border-bottom:1px solid #242424;
 }
 
 .info-box{
   display:flex;
-  gap:18px;
+
+  gap:15px;
+
   align-items:center;
 }
 
 .icon{
-  font-size:35px;
-  color:#35e56d;
+  font-size:34px;
+
+  color:var(--red);
 }
 
 .info-box h3{
   font-size:15px;
-  margin-bottom:7px;
+
+  margin-bottom:6px;
 }
 
 .info-box p{
-  color:#aaa;
+  color:#999;
+
   font-size:13px;
+
+  line-height:1.4;
 }
 
-/* TABLES */
+
+/* =========================
+   TABLES
+========================= */
+
 .tables-section{
-  background:#091115;
-  padding:35px 5% 55px;
+  background:#070707;
+
+  padding:45px 5% 65px;
 }
 
 .section-title{
   display:flex;
+
   justify-content:space-between;
+
   align-items:center;
-  margin-bottom:22px;
+
+  margin-bottom:25px;
 }
 
 .section-title h2{
-  font-size:28px;
+  font-size:31px;
 }
 
 .section-title h2 span{
-  color:#35e56d;
+  color:var(--red);
+}
+
+.section-title p{
+  color:#888;
+
+  margin-top:7px;
 }
 
 .section-title a{
-  border:1px solid #59666b;
-  padding:12px 20px;
-  border-radius:9px;
-  font-size:14px;
+  border:1px solid var(--red);
+
+  color:var(--red);
+
+  padding:11px 18px;
+
+  border-radius:8px;
+
+  font-size:13px;
+
+  transition:.2s;
 }
+
+.section-title a:hover{
+  background:var(--red);
+
+  color:#fff;
+}
+
+
+/* =========================
+   TABLE CARDS
+========================= */
 
 .tables{
   display:grid;
+
   grid-template-columns:repeat(4,1fr);
-  gap:20px;
+
+  gap:18px;
 }
 
 .table-card{
-  height:145px;
-  border:1px solid #455158;
-  border-radius:12px;
-  overflow:hidden;
-  position:relative;
-  background-size:cover;
-  background-position:center;
-}
+  height:180px;
 
-.table-card:nth-child(1){
-  background-image:linear-gradient(0deg,rgba(0,0,0,.8),transparent),
-  url("https://images.unsplash.com/photo-1606925797300-0b35e9d1794e?auto=format&fit=crop&w=800&q=80");
+  border:1px solid #343434;
+
+  border-radius:12px;
+
+  overflow:hidden;
+
+  position:relative;
+
+  background-image:
+    linear-gradient(
+      0deg,
+      rgba(0,0,0,.9),
+      rgba(0,0,0,.15)
+    ),
+    url("billard-bg.jpg");
+
+  background-size:cover;
+
+  background-position:center;
+
+  transition:.25s;
 }
 
 .table-card:nth-child(2){
-  background-image:linear-gradient(0deg,rgba(0,0,0,.8),transparent),
-  url("https://images.unsplash.com/photo-1611171722004-3f7b8e2f1d4f?auto=format&fit=crop&w=800&q=80");
+  background-position:65% center;
 }
 
 .table-card:nth-child(3){
-  background-image:linear-gradient(0deg,rgba(0,0,0,.8),transparent),
-  url("https://images.unsplash.com/photo-1596701062351-8c2c14d8e0e8?auto=format&fit=crop&w=800&q=80");
+  background-position:35% center;
 }
 
 .table-card:nth-child(4){
-  background-image:linear-gradient(0deg,rgba(0,0,0,.8),transparent),
-  url("https://images.unsplash.com/photo-1567220724-9d2d3b2d4b2d?auto=format&fit=crop&w=800&q=80");
+  background-position:80% center;
+}
+
+.table-card:hover{
+  transform:translateY(-5px);
+
+  border-color:var(--red);
 }
 
 .table-info{
   position:absolute;
-  bottom:12px;
-  left:16px;
-  right:16px;
+
+  bottom:13px;
+
+  left:15px;
+
+  right:15px;
+
+  z-index:2;
+
   display:flex;
+
   justify-content:space-between;
+
   align-items:center;
 }
 
@@ -275,71 +456,155 @@ nav{
   font-size:17px;
 }
 
-.available{
-  background:#126c31;
+.status{
   padding:6px 10px;
+
   border-radius:20px;
+
   font-size:11px;
+}
+
+.available{
+  background:#087a36;
 }
 
 .busy{
-  background:#8b1720;
-  padding:6px 10px;
-  border-radius:20px;
-  font-size:11px;
+  background:#c90d2c;
 }
 
-/* FOOTER */
+
+/* =========================
+   FOOTER
+========================= */
+
 footer{
-  background:#020608;
-  padding:30px 5%;
+  background:#030303;
+
+  padding:35px 5%;
+
   display:grid;
+
   grid-template-columns:2fr 1fr 1fr 1fr;
+
   gap:30px;
-  border-top:1px solid #182126;
+
+  border-top:1px solid #222;
 }
 
 .footer-logo{
-  font-size:27px;
-  font-weight:bold;
+  font-size:28px;
+
+  font-weight:900;
 }
 
 .footer-logo span{
-  color:#35e56d;
+  color:var(--red);
 }
 
 footer h4{
+  color:var(--red);
+
   margin-bottom:10px;
-  color:#35e56d;
 }
 
 footer p{
-  color:#aaa;
-  font-size:14px;
-  margin:7px 0;
+  color:#999;
+
+  font-size:13px;
+
+  margin:6px 0;
 }
 
-/* MOBILE */
+
+/* =========================
+   TABLET
+========================= */
+
 @media(max-width:900px){
+
   .menu{
     display:none;
   }
+
+  .hero-content{
+    padding:65px 30px;
+  }
+
+  .hero h1{
+    font-size:50px;
+  }
+
+  .booking{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .info{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .tables{
+    grid-template-columns:1fr 1fr;
+  }
+
+  footer{
+    grid-template-columns:1fr 1fr;
+  }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:600px){
 
   nav{
     padding:0 20px;
   }
 
+  .logo{
+    font-size:29px;
+  }
+
+  .login{
+    padding:10px 17px;
+    font-size:13px;
+  }
+
+  .hero{
+    min-height:590px;
+  }
+
   .hero-content{
-    padding:60px 25px;
+    padding:65px 25px;
+  }
+
+  .small-title{
+    font-size:14px;
+    letter-spacing:5px;
   }
 
   .hero h1{
-    font-size:42px;
+    font-size:43px;
+  }
+
+  .hero p{
+    font-size:20px;
+  }
+
+  .hero h2{
+    font-size:29px;
+  }
+
+  .features{
+    flex-direction:column;
+    gap:14px;
   }
 
   .booking{
-    grid-template-columns:1fr 1fr;
-    margin-top:-30px;
+    width:92%;
+    grid-template-columns:1fr;
+    margin-top:-25px;
   }
 
   .book-btn{
@@ -347,94 +612,116 @@ footer p{
   }
 
   .info{
-    grid-template-columns:1fr 1fr;
+    grid-template-columns:1fr;
+    width:90%;
   }
 
   .tables{
-    grid-template-columns:1fr 1fr;
+    grid-template-columns:1fr;
   }
 
-  footer{
-    grid-template-columns:1fr 1fr;
-  }
-}
-
-@media(max-width:600px){
-  .hero{
-    min-height:570px;
+  .table-card{
+    height:190px;
   }
 
-  .hero h1{
-    font-size:38px;
-  }
-
-  .hero p{
-    font-size:19px;
-  }
-
-  .features{
+  .section-title{
     flex-direction:column;
-    gap:15px;
-  }
-
-  .booking{
-    grid-template-columns:1fr;
-    width:92%;
-  }
-
-  .info{
-    grid-template-columns:1fr;
-  }
-
-  .tables{
-    grid-template-columns:1fr;
+    align-items:flex-start;
+    gap:18px;
   }
 
   footer{
     grid-template-columns:1fr;
   }
+
 }
+
 </style>
 </head>
 
+
 <body>
 
-<nav>
-  <div class="logo">EMPIRI<span>OR</span></div>
 
-  <div class="menu">
-    <a href="#">Accueil</a>
-    <a href="#reservation">Réservation</a>
-    <a href="#tables">Nos Tables</a>
-    <a href="#tarifs">Tarifs</a>
-    <a href="#contact">Contact</a>
+<!-- NAVBAR -->
+
+<nav>
+
+  <div class="logo">
+    EMPIRI<span>OR</span>
   </div>
 
-  <a class="login" href="#">Connexion</a>
+  <div class="menu">
+
+    <a href="#accueil">Accueil</a>
+
+    <a href="#reservation">Réservation</a>
+
+    <a href="#tables">Nos Tables</a>
+
+    <a href="#tarifs">Tarifs</a>
+
+    <a href="#contact">Contact</a>
+
+  </div>
+
+  <a class="login" href="#">
+    Connexion
+  </a>
+
 </nav>
 
-<section class="hero">
+
+
+<!-- HERO -->
+
+<section class="hero" id="accueil">
+
   <div class="hero-content">
-    <div class="small-title">BIENVENU CHEZ</div>
+
+    <div class="small-title">
+      BIENVENU CHEZ
+    </div>
 
     <h1>
       EMPIRI<span>OR</span>
     </h1>
 
-    <p>Billard • Réservation</p>
+    <p>
+      Billard • Réservation
+    </p>
 
-    <h2 style="margin-top:35px;font-size:32px;">
+    <h2>
       Réservez votre table<br>
-      <span style="color:#35e56d;">en quelques secondes</span>
+      <span>en quelques secondes</span>
     </h2>
 
     <div class="features">
-      <div>🎱 Tables de qualité</div>
-      <div>👥 Ambiance conviviale</div>
-      <div>⏱️ Réservation rapide</div>
+
+      <div class="feature">
+        <span class="feature-icon">🎱</span>
+        Tables de qualité
+      </div>
+
+      <div class="feature">
+        <span class="feature-icon">👥</span>
+        Ambiance conviviale
+      </div>
+
+      <div class="feature">
+        <span class="feature-icon">⏱️</span>
+        Réservation rapide
+      </div>
+
     </div>
+
   </div>
+
 </section>
+
+
+
+<!-- RESERVATION -->
 
 <section class="booking" id="reservation">
 
@@ -468,128 +755,263 @@ footer p{
     <strong>Votre numéro</strong>
   </div>
 
-  <button class="book-btn" onclick="reserve()">
-    📅 RÉSERVER
+  <button
+    class="book-btn"
+    onclick="reserve()">
+
+    RÉSERVER
+
   </button>
 
 </section>
 
+
+
+<!-- INFO -->
+
 <section class="info">
 
   <div class="info-box">
-    <div class="icon">💎</div>
+
+    <div class="icon">🎱</div>
+
     <div>
-      <h3>Tables modernes</h3>
-      <p>Un matériel de qualité pour une meilleure expérience.</p>
+
+      <h3>
+        Tables de billard
+      </h3>
+
+      <p>
+        Des tables professionnelles
+        pour une meilleure expérience.
+      </p>
+
     </div>
+
   </div>
 
-  <div class="info-box">
-    <div class="icon">◷</div>
-    <div>
-      <h3>Réservation en ligne</h3>
-      <p>Simple, rapide et sécurisé.</p>
-    </div>
-  </div>
 
   <div class="info-box">
+
+    <div class="icon">⏱️</div>
+
+    <div>
+
+      <h3>
+        Réservation en ligne
+      </h3>
+
+      <p>
+        Simple, rapide et sécurisé.
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <div class="info-box">
+
     <div class="icon">💳</div>
+
     <div>
-      <h3>Paiement sur place</h3>
-      <p>Espèces ou carte bancaire.</p>
+
+      <h3>
+        Paiement sur place
+      </h3>
+
+      <p>
+        Espèces ou carte bancaire.
+      </p>
+
     </div>
+
   </div>
 
+
   <div class="info-box">
+
     <div class="icon">👥</div>
+
     <div>
-      <h3>Jusqu'à 4 joueurs</h3>
-      <p>Idéal entre amis ou en famille.</p>
+
+      <h3>
+        Jusqu'à 4 joueurs
+      </h3>
+
+      <p>
+        Idéal entre amis ou en famille.
+      </p>
+
     </div>
+
   </div>
 
 </section>
+
+
+
+<!-- TABLES -->
 
 <section class="tables-section" id="tables">
 
   <div class="section-title">
+
     <div>
-      <h2>Nos Tables <span>━</span></h2>
-      <p style="color:#aaa;margin-top:6px;">
+
+      <h2>
+        Nos <span>Tables</span>
+      </h2>
+
+      <p>
         Choisissez votre table et réservez en un clic.
       </p>
+
     </div>
 
-    <a href="#">Voir toutes les tables →</a>
+    <a href="#">
+      Voir toutes les tables →
+    </a>
+
   </div>
+
 
   <div class="tables">
 
     <div class="table-card">
+
       <div class="table-info">
+
         <h3>Table 1</h3>
-        <span class="available">Disponible</span>
+
+        <span class="status available">
+          Disponible
+        </span>
+
       </div>
+
     </div>
 
+
     <div class="table-card">
+
       <div class="table-info">
+
         <h3>Table 2</h3>
-        <span class="available">Disponible</span>
+
+        <span class="status available">
+          Disponible
+        </span>
+
       </div>
+
     </div>
 
+
     <div class="table-card">
+
       <div class="table-info">
+
         <h3>Table 3</h3>
-        <span class="busy">Occupée</span>
+
+        <span class="status busy">
+          Occupée
+        </span>
+
       </div>
+
     </div>
 
+
     <div class="table-card">
+
       <div class="table-info">
+
         <h3>Table 4</h3>
-        <span class="available">Disponible</span>
+
+        <span class="status available">
+          Disponible
+        </span>
+
       </div>
+
     </div>
 
   </div>
+
 </section>
+
+
+
+<!-- FOOTER -->
 
 <footer id="contact">
 
   <div>
-    <div class="footer-logo">EMPIRI<span>OR</span></div>
-    <p>Billard • Réservation</p>
+
+    <div class="footer-logo">
+      EMPIRI<span>OR</span>
+    </div>
+
+    <p>
+      Billard • Réservation
+    </p>
+
   </div>
 
+
   <div>
+
     <h4>Adresse</h4>
-    <p>📍 Ariana, Tunisie</p>
+
+    <p>
+      📍 Ariana, Tunisie
+    </p>
+
   </div>
 
+
   <div>
+
     <h4>Téléphone</h4>
-    <p>📞 +216 25 123 456</p>
+
+    <p>
+      📞 +216 25 123 456
+    </p>
+
   </div>
 
+
   <div>
+
     <h4>Email</h4>
-    <p>✉️ empirior@gmail.com</p>
+
+    <p>
+      ✉️ empirior@gmail.com
+    </p>
+
   </div>
 
 </footer>
 
+
+
 <script>
+
 const today = new Date();
 
 document.getElementById("date").textContent =
   today.toLocaleDateString("fr-FR");
 
+
 function reserve(){
+
   alert("Votre réservation a été enregistrée !");
+
 }
+
 </script>
+
 
 </body>
 </html>
