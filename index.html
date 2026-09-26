@@ -1040,9 +1040,35 @@ document.getElementById("date").textContent =
   today.toLocaleDateString("fr-FR");
 
 
+function selectTable(number){
+
+  // نبدلو table المختارة
+  document.getElementById("selectedTable").textContent =
+    "Table " + number;
+
+  // ننحي selected من الكل
+  document.querySelectorAll(".table-card").forEach(function(card){
+    card.classList.remove("selected");
+  });
+
+  // نعمل selected للـ table اللي ضغطت عليها
+  document.querySelectorAll(".table-card")[number - 1]
+    .classList.add("selected");
+
+  // نهبط للـ réservation
+  document.getElementById("reservation").scrollIntoView({
+    behavior:"smooth",
+    block:"center"
+  });
+}
+
+
 function reserve(){
 
-  alert("Votre réservation a été enregistrée !");
+  const table =
+    document.getElementById("selectedTable").textContent;
+
+  alert("Réservation de " + table + " enregistrée !");
 
 }
 
