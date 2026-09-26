@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EMPIRIOR – Billard Réservation</title>
+<title>EMPIRIOR - Billard Réservation</title>
 
 <style>
 *{
@@ -14,25 +14,21 @@
 
 body{
   font-family:Arial,sans-serif;
-  background:#0b0d10;
+  background:#080b10;
   color:white;
 }
 
 header{
   background:#11151a;
-  padding:22px;
+  padding:25px 20px;
   text-align:center;
-  border-bottom:1px solid #292e35;
+  border-bottom:2px solid #d4af37;
 }
 
-.logo{
-  font-size:30px;
-  font-weight:bold;
+header h1{
+  font-size:32px;
+  color:#d4af37;
   letter-spacing:3px;
-}
-
-.logo span{
-  color:#d49b62;
 }
 
 header p{
@@ -40,55 +36,43 @@ header p{
   color:#aaa;
 }
 
-.hero{
-  text-align:center;
-  padding:55px 20px;
-  background:linear-gradient(135deg,#11151a,#19130f);
+.container{
+  max-width:900px;
+  margin:auto;
+  padding:25px 18px;
 }
 
-.hero h1{
-  font-size:38px;
-  margin-bottom:12px;
+.hero{
+  text-align:center;
+  padding:35px 15px;
+}
+
+.hero h2{
+  font-size:30px;
+  margin-bottom:10px;
+}
+
+.hero span{
+  color:#d4af37;
 }
 
 .hero p{
-  color:#bbb;
-  font-size:17px;
+  color:#aaa;
+  line-height:1.6;
 }
 
-.container{
-  max-width:850px;
-  margin:auto;
-  padding:25px 18px 50px;
+.card{
+  background:#11151a;
+  border:1px solid #292f36;
+  border-radius:16px;
+  padding:22px;
+  margin-top:20px;
 }
 
-.section{
-  background:#12161b;
-  border:1px solid #292e35;
-  border-radius:18px;
-  padding:25px;
-  margin-bottom:25px;
-}
-
-.section h2{
-  margin-bottom:20px;
-}
-
-label{
-  display:block;
-  margin-bottom:8px;
-  color:#ccc;
-}
-
-input,select{
-  width:100%;
-  padding:14px;
+.card h3{
+  color:#d4af37;
   margin-bottom:18px;
-  border-radius:10px;
-  border:1px solid #343a42;
-  background:#0b0d10;
-  color:white;
-  font-size:16px;
+  font-size:22px;
 }
 
 .tables{
@@ -98,82 +82,134 @@ input,select{
 }
 
 .table{
-  border:1px solid #343a42;
-  border-radius:14px;
+  background:#181d23;
+  border:2px solid #292f36;
+  border-radius:12px;
   padding:20px;
   text-align:center;
-  background:#0e1115;
   cursor:pointer;
   transition:.2s;
 }
 
 .table:hover{
-  border-color:#d49b62;
+  border-color:#d4af37;
+  transform:translateY(-2px);
 }
 
-.table.selected{
-  background:#2a1d13;
-  border:2px solid #d49b62;
+.table.active{
+  border-color:#d4af37;
+  background:#242019;
 }
 
 .table .icon{
-  font-size:35px;
-  margin-bottom:8px;
+  font-size:40px;
+  margin-bottom:10px;
+}
+
+.table h4{
+  font-size:18px;
+}
+
+.table p{
+  color:#999;
+  margin-top:6px;
+}
+
+label{
+  display:block;
+  margin:15px 0 7px;
+  color:#ddd;
+}
+
+input,select{
+  width:100%;
+  padding:14px;
+  border-radius:9px;
+  border:1px solid #343b43;
+  background:#080b10;
+  color:white;
+  font-size:16px;
+  outline:none;
+}
+
+input:focus,select:focus{
+  border-color:#d4af37;
 }
 
 button{
   width:100%;
-  padding:16px;
-  border:none;
-  border-radius:12px;
-  background:#d49b62;
-  color:#111;
+  margin-top:22px;
+  padding:15px;
+  border:0;
+  border-radius:10px;
+  background:#d4af37;
+  color:#080b10;
   font-size:17px;
   font-weight:bold;
   cursor:pointer;
 }
 
 button:hover{
-  opacity:.9;
+  background:#f0cc55;
 }
 
-.contact{
+#message{
+  display:none;
+  margin-top:18px;
+  padding:15px;
+  border-radius:10px;
+  background:#16351f;
+  border:1px solid #2f9e52;
+  color:#8df0a8;
   text-align:center;
 }
 
-.phone{
-  display:inline-block;
-  margin-top:15px;
-  color:#d49b62;
-  font-size:24px;
-  font-weight:bold;
-  text-decoration:none;
+.info{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+  margin-top:20px;
 }
 
-.result{
-  display:none;
-  margin-top:20px;
-  padding:18px;
+.info div{
+  background:#11151a;
+  padding:18px 10px;
   border-radius:12px;
-  background:#17231b;
-  border:1px solid #315a3b;
-  line-height:1.8;
+  text-align:center;
+  border:1px solid #292f36;
+}
+
+.info strong{
+  display:block;
+  color:#d4af37;
+  font-size:20px;
+  margin-bottom:5px;
 }
 
 footer{
-  text-align:center;
+  margin-top:40px;
   padding:25px;
+  text-align:center;
+  background:#11151a;
   color:#777;
-  border-top:1px solid #292e35;
+  border-top:1px solid #292f36;
 }
 
 @media(max-width:600px){
-  .hero h1{
-    font-size:30px;
+  .tables{
+    grid-template-columns:1fr;
   }
 
-  .tables{
-    grid-template-columns:1fr 1fr;
+  .info{
+    grid-template-columns:1fr;
+  }
+
+  header h1{
+    font-size:26px;
+  }
+
+  .hero h2{
+    font-size:25px;
   }
 }
 </style>
@@ -182,126 +218,171 @@ footer{
 <body>
 
 <header>
-  <div class="logo">EMPIR<span>IOR</span></div>
+  <h1>EMPIRIOR</h1>
   <p>Billard • Réservation</p>
 </header>
 
-<section class="hero">
-  <h1>Réservez votre table</h1>
-  <p>Choisissez votre table, votre date et votre heure.</p>
-</section>
-
 <div class="container">
 
-  <div class="section">
-    <h2>🎱 Choisissez une table</h2>
+  <section class="hero">
+    <h2>Réservez votre <span>table de billard</span></h2>
+    <p>
+      Choisissez votre table, votre date et votre horaire
+      pour profiter d'une partie chez EMPIRIOR.
+    </p>
+  </section>
 
-    <div class="tables">
-
-      <div class="table" onclick="choisirTable(1,this)">
-        <div class="icon">🎱</div>
-        <strong>Table 1</strong>
-        <p>Billard</p>
-      </div>
-
-      <div class="table" onclick="choisirTable(2,this)">
-        <div class="icon">🎱</div>
-        <strong>Table 2</strong>
-        <p>Billard</p>
-      </div>
-
-      <div class="table" onclick="choisirTable(3,this)">
-        <div class="icon">🎱</div>
-        <strong>Table 3</strong>
-        <p>Billard</p>
-      </div>
-
-      <div class="table" onclick="choisirTable(4,this)">
-        <div class="icon">🎱</div>
-        <strong>Table 4</strong>
-        <p>Billard</p>
-      </div>
-
+  <div class="info">
+    <div>
+      <strong>6</strong>
+      Tables
+    </div>
+    <div>
+      <strong>7j/7</strong>
+      Ouvert
+    </div>
+    <div>
+      <strong>100%</strong>
+      Ambiance
     </div>
   </div>
 
-  <div class="section">
-    <h2>📅 Informations de réservation</h2>
+  <section class="card">
+    <h3>🎱 Choisissez votre table</h3>
+
+    <div class="tables">
+
+      <div class="table" onclick="chooseTable(1,this)">
+        <div class="icon">🎱</div>
+        <h4>Table 1</h4>
+        <p>Disponible</p>
+      </div>
+
+      <div class="table" onclick="chooseTable(2,this)">
+        <div class="icon">🎱</div>
+        <h4>Table 2</h4>
+        <p>Disponible</p>
+      </div>
+
+      <div class="table" onclick="chooseTable(3,this)">
+        <div class="icon">🎱</div>
+        <h4>Table 3</h4>
+        <p>Disponible</p>
+      </div>
+
+      <div class="table" onclick="chooseTable(4,this)">
+        <div class="icon">🎱</div>
+        <h4>Table 4</h4>
+        <p>Disponible</p>
+      </div>
+
+      <div class="table" onclick="chooseTable(5,this)">
+        <div class="icon">🎱</div>
+        <h4>Table 5</h4>
+        <p>Disponible</p>
+      </div>
+
+      <div class="table" onclick="chooseTable(6,this)">
+        <div class="icon">🎱</div>
+        <h4>Table 6</h4>
+        <p>Disponible</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="card">
+    <h3>📅 Informations de réservation</h3>
 
     <label>Nom</label>
-    <input id="nom" type="text" placeholder="Votre nom">
+    <input type="text" id="name" placeholder="Votre nom">
 
-    <label>Numéro de téléphone</label>
-    <input id="telephone" type="tel" placeholder="Votre numéro">
+    <label>Téléphone</label>
+    <input type="tel" id="phone" placeholder="Votre numéro">
 
     <label>Date</label>
-    <input id="date" type="date">
+    <input type="date" id="date">
 
     <label>Heure</label>
-    <input id="heure" type="time">
+    <select id="time">
+      <option value="">Choisir une heure</option>
+      <option>14:00</option>
+      <option>15:00</option>
+      <option>16:00</option>
+      <option>17:00</option>
+      <option>18:00</option>
+      <option>19:00</option>
+      <option>20:00</option>
+      <option>21:00</option>
+      <option>22:00</option>
+      <option>23:00</option>
+    </select>
 
-    <button onclick="reserver()">
-      Confirmer la réservation
-    </button>
+    <label>Durée</label>
+    <select id="duration">
+      <option value="1">1 heure</option>
+      <option value="2">2 heures</option>
+      <option value="3">3 heures</option>
+      <option value="4">4 heures</option>
+    </select>
 
-    <div class="result" id="resultat"></div>
-  </div>
+    <button onclick="reserve()">Réserver maintenant</button>
 
-  <div class="section contact">
-    <h2>📞 Contact</h2>
-    <p>Pour toute information ou réservation :</p>
-
-    <a class="phone" href="tel:29807983">
-      29 807 983
-    </a>
-  </div>
+    <div id="message"></div>
+  </section>
 
 </div>
 
 <footer>
-  © 2026 EMPIRIOR – Billard
+  © 2026 EMPIRIOR — Billard & Réservation
 </footer>
 
 <script>
 
-let tableChoisie = null;
+let selectedTable = null;
 
-function choisirTable(numero, element){
-
-  tableChoisie = numero;
+function chooseTable(number, element){
 
   document.querySelectorAll(".table").forEach(function(table){
-    table.classList.remove("selected");
+    table.classList.remove("active");
   });
 
-  element.classList.add("selected");
+  element.classList.add("active");
+  selectedTable = number;
 }
 
-function reserver(){
+function reserve(){
 
-  const nom = document.getElementById("nom").value;
-  const telephone = document.getElementById("telephone").value;
+  const name = document.getElementById("name").value.trim();
+  const phone = document.getElementById("phone").value.trim();
   const date = document.getElementById("date").value;
-  const heure = document.getElementById("heure").value;
-  const resultat = document.getElementById("resultat");
+  const time = document.getElementById("time").value;
+  const duration = document.getElementById("duration").value;
+  const message = document.getElementById("message");
 
-  if(!tableChoisie || !nom || !telephone || !date || !heure){
-
-    alert("Veuillez remplir toutes les informations et choisir une table.");
+  if(!selectedTable){
+    alert("Veuillez choisir une table.");
     return;
   }
 
-  resultat.style.display = "block";
+  if(!name || !phone || !date || !time){
+    alert("Veuillez remplir tous les champs.");
+    return;
+  }
 
-  resultat.innerHTML =
-    "<strong>✅ Demande de réservation enregistrée</strong><br><br>" +
-    "🎱 Table : " + tableChoisie + "<br>" +
-    "👤 Nom : " + nom + "<br>" +
-    "📞 Téléphone : " + telephone + "<br>" +
-    "📅 Date : " + date + "<br>" +
-    "🕐 Heure : " + heure + "<br><br>" +
-    "📞 Nous contacterons le 29 807 983 pour confirmer la réservation.";
+  message.style.display = "block";
 
+  message.innerHTML =
+    "✅ Réservation confirmée !<br><br>" +
+    "<strong>" + name + "</strong><br>" +
+    "Table " + selectedTable + "<br>" +
+    date + " à " + time + "<br>" +
+    "Durée : " + duration + " heure(s)";
+
+  window.scrollTo({
+    top:document.body.scrollHeight,
+    behavior:"smooth"
+  });
 }
 
 </script>
