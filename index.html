@@ -7,6 +7,7 @@
 <title>EMPIRIOR — Billard & Réservation</title>
 
 <style>
+
 *{
   box-sizing:border-box;
   margin:0;
@@ -28,36 +29,22 @@ a{
   text-decoration:none;
 }
 
-/* =========================
-   COULEURS
-========================= */
-
 :root{
   --red:#e5092f;
   --red-light:#ff1744;
-  --black:#050505;
-  --dark:#0b0b0c;
-  --card:#111214;
-  --border:#29292b;
-  --gray:#9b9b9b;
 }
 
 
-/* =========================
-   NAVBAR
-========================= */
+/* NAVBAR */
 
 nav{
   height:82px;
   background:#050505;
   border-bottom:1px solid #242424;
-
   display:flex;
   align-items:center;
   justify-content:space-between;
-
   padding:0 5%;
-
   position:relative;
   z-index:20;
 }
@@ -95,11 +82,8 @@ nav{
 .login{
   border:1px solid var(--red);
   color:var(--red);
-
   padding:11px 23px;
-
   border-radius:8px;
-
   transition:.2s;
 }
 
@@ -109,9 +93,7 @@ nav{
 }
 
 
-/* =========================
-   HERO
-========================= */
+/* HERO */
 
 .hero{
   min-height:570px;
@@ -192,24 +174,17 @@ nav{
 }
 
 
-/* =========================
-   RESERVATION
-========================= */
+/* RESERVATION */
 
 .booking{
   width:90%;
-
   margin:-45px auto 0;
-
   position:relative;
   z-index:10;
 
   background:#101112;
-
   border:1px solid #353535;
-
   border-radius:14px;
-
   padding:15px;
 
   display:grid;
@@ -230,19 +205,14 @@ nav{
 
 .field{
   background:#18191b;
-
   border-radius:9px;
-
   padding:12px 14px;
 }
 
 .field small{
   display:block;
-
   color:#888;
-
   margin-bottom:6px;
-
   font-size:12px;
 }
 
@@ -252,17 +222,11 @@ nav{
 
 .book-btn{
   background:var(--red);
-
   color:#fff;
-
   border:0;
-
   border-radius:9px;
-
   font-weight:bold;
-
   cursor:pointer;
-
   transition:.2s;
 }
 
@@ -272,21 +236,15 @@ nav{
 }
 
 
-/* =========================
-   INFO
-========================= */
+/* INFO */
 
 .info{
   width:90%;
-
   margin:auto;
-
   padding:45px 0;
 
   display:grid;
-
   grid-template-columns:repeat(4,1fr);
-
   gap:30px;
 
   border-bottom:1px solid #242424;
@@ -294,50 +252,38 @@ nav{
 
 .info-box{
   display:flex;
-
   gap:15px;
-
   align-items:center;
 }
 
 .icon{
   font-size:34px;
-
   color:var(--red);
 }
 
 .info-box h3{
   font-size:15px;
-
   margin-bottom:6px;
 }
 
 .info-box p{
   color:#999;
-
   font-size:13px;
-
   line-height:1.4;
 }
 
 
-/* =========================
-   TABLES
-========================= */
+/* TABLES */
 
 .tables-section{
   background:#070707;
-
   padding:45px 5% 65px;
 }
 
 .section-title{
   display:flex;
-
   justify-content:space-between;
-
   align-items:center;
-
   margin-bottom:25px;
 }
 
@@ -351,40 +297,29 @@ nav{
 
 .section-title p{
   color:#888;
-
   margin-top:7px;
 }
 
 .section-title a{
   border:1px solid var(--red);
-
   color:var(--red);
-
   padding:11px 18px;
-
   border-radius:8px;
-
   font-size:13px;
-
   transition:.2s;
 }
 
 .section-title a:hover{
   background:var(--red);
-
   color:#fff;
 }
 
 
-/* =========================
-   TABLE CARDS
-========================= */
+/* TABLE CARDS */
 
 .tables{
   display:grid;
-
   grid-template-columns:repeat(4,1fr);
-
   gap:18px;
 }
 
@@ -393,6 +328,7 @@ nav{
 
   border:1px solid #343434;
   border-radius:12px;
+
   overflow:hidden;
   position:relative;
 
@@ -400,9 +336,15 @@ nav{
   background-position:center;
 
   transition:.25s;
+
+  cursor:pointer;
+
+  user-select:none;
 }
 
+
 /* TABLE 1 */
+
 .table-card:nth-child(1){
   background-image:
     linear-gradient(
@@ -413,7 +355,9 @@ nav{
     url("https://images.unsplash.com/photo-1611987101912-9e0b92a560a8?auto=format&fit=crop&w=1000&q=85");
 }
 
+
 /* TABLE 2 */
+
 .table-card:nth-child(2){
   background-image:
     linear-gradient(
@@ -422,9 +366,13 @@ nav{
       rgba(0,0,0,.15)
     ),
     url("https://images.unsplash.com/photo-1713659161795-b9e02ec28c58?auto=format&fit=crop&w=1000&q=85");
+
+  background-position:65% center;
 }
 
+
 /* TABLE 3 */
+
 .table-card:nth-child(3){
   background-image:
     linear-gradient(
@@ -433,9 +381,13 @@ nav{
       rgba(0,0,0,.15)
     ),
     url("https://images.unsplash.com/photo-1538511248183-2e9aa2f112c6?auto=format&fit=crop&w=1000&q=85");
+
+  background-position:35% center;
 }
 
+
 /* TABLE 4 */
+
 .table-card:nth-child(4){
   background-image:
     linear-gradient(
@@ -444,46 +396,44 @@ nav{
       rgba(0,0,0,.15)
     ),
     url("https://images.unsplash.com/photo-1713659161795-b9e02ec28c58?auto=format&fit=crop&w=1000&q=85");
-}
 
-.table-card:hover{
-  transform:translateY(-5px);
-  border-color:var(--red);
-}
-
-.table-card:nth-child(2){
-  background-position:65% center;
-}
-
-.table-card:nth-child(3){
-  background-position:35% center;
-}
-
-.table-card:nth-child(4){
   background-position:80% center;
 }
 
+
+/* HOVER */
+
 .table-card:hover{
   transform:translateY(-5px);
-
   border-color:var(--red);
 }
 
+
+/* SELECTED */
+
+.table-card.selected{
+  border:3px solid var(--red);
+
+  box-shadow:
+    0 0 15px rgba(229,9,47,.45),
+    inset 0 0 20px rgba(229,9,47,.15);
+
+  transform:translateY(-5px);
+}
+
+
+/* TABLE INFO */
+
 .table-info{
   position:absolute;
-
   bottom:13px;
-
   left:15px;
-
   right:15px;
 
   z-index:2;
 
   display:flex;
-
   justify-content:space-between;
-
   align-items:center;
 }
 
@@ -493,9 +443,7 @@ nav{
 
 .status{
   padding:6px 10px;
-
   border-radius:20px;
-
   font-size:11px;
 }
 
@@ -503,22 +451,14 @@ nav{
   background:#087a36;
 }
 
-.busy{
-  background:#c90d2c;
-}
 
-
-/* =========================
-   FOOTER
-========================= */
+/* FOOTER */
 
 footer{
   background:#030303;
-
   padding:35px 5%;
 
   display:grid;
-
   grid-template-columns:2fr 1fr 1fr 1fr;
 
   gap:30px;
@@ -528,7 +468,6 @@ footer{
 
 .footer-logo{
   font-size:28px;
-
   font-weight:900;
 }
 
@@ -538,22 +477,47 @@ footer{
 
 footer h4{
   color:var(--red);
-
   margin-bottom:10px;
 }
 
 footer p{
   color:#999;
-
   font-size:13px;
-
   margin:6px 0;
 }
 
 
-/* =========================
-   TABLET
-========================= */
+/* MESSAGE */
+
+.message{
+  position:fixed;
+
+  left:50%;
+  bottom:25px;
+
+  transform:translateX(-50%);
+
+  background:#151515;
+
+  border:1px solid var(--red);
+
+  color:#fff;
+
+  padding:14px 22px;
+
+  border-radius:10px;
+
+  font-size:14px;
+
+  display:none;
+
+  z-index:100;
+
+  box-shadow:0 10px 30px rgba(0,0,0,.5);
+}
+
+
+/* TABLET */
 
 @media(max-width:900px){
 
@@ -584,12 +548,11 @@ footer p{
   footer{
     grid-template-columns:1fr 1fr;
   }
+
 }
 
 
-/* =========================
-   MOBILE
-========================= */
+/* MOBILE */
 
 @media(max-width:600px){
 
@@ -689,13 +652,9 @@ footer p{
   <div class="menu">
 
     <a href="#accueil">Accueil</a>
-
     <a href="#reservation">Réservation</a>
-
     <a href="#tables">Nos Tables</a>
-
     <a href="#tarifs">Tarifs</a>
-
     <a href="#contact">Contact</a>
 
   </div>
@@ -705,7 +664,6 @@ footer p{
   </a>
 
 </nav>
-
 
 
 <!-- HERO -->
@@ -755,7 +713,6 @@ footer p{
 </section>
 
 
-
 <!-- RESERVATION -->
 
 <section class="booking" id="reservation">
@@ -771,9 +728,9 @@ footer p{
   </div>
 
   <div class="field">
-  <small>🎱 Table</small>
-  <strong id="selectedTable">Table 1</strong>
-</div>
+    <small>🎱 Table</small>
+    <strong id="selectedTable">Table 1</strong>
+  </div>
 
   <div class="field">
     <small>⏱️ Durée</small>
@@ -801,7 +758,6 @@ footer p{
 </section>
 
 
-
 <!-- INFO -->
 
 <section class="info">
@@ -811,16 +767,12 @@ footer p{
     <div class="icon">🎱</div>
 
     <div>
-
-      <h3>
-        Tables de billard
-      </h3>
+      <h3>Tables de billard</h3>
 
       <p>
         Des tables professionnelles
         pour une meilleure expérience.
       </p>
-
     </div>
 
   </div>
@@ -831,15 +783,11 @@ footer p{
     <div class="icon">⏱️</div>
 
     <div>
-
-      <h3>
-        Réservation en ligne
-      </h3>
+      <h3>Réservation en ligne</h3>
 
       <p>
         Simple, rapide et sécurisé.
       </p>
-
     </div>
 
   </div>
@@ -850,15 +798,11 @@ footer p{
     <div class="icon">💳</div>
 
     <div>
-
-      <h3>
-        Paiement sur place
-      </h3>
+      <h3>Paiement sur place</h3>
 
       <p>
         Espèces ou carte bancaire.
       </p>
-
     </div>
 
   </div>
@@ -869,21 +813,16 @@ footer p{
     <div class="icon">👥</div>
 
     <div>
-
-      <h3>
-        Jusqu'à 4 joueurs
-      </h3>
+      <h3>Jusqu'à 4 joueurs</h3>
 
       <p>
         Idéal entre amis ou en famille.
       </p>
-
     </div>
 
   </div>
 
 </section>
-
 
 
 <!-- TABLES -->
@@ -904,7 +843,7 @@ footer p{
 
     </div>
 
-    <a href="#">
+    <a href="#reservation">
       Voir toutes les tables →
     </a>
 
@@ -913,7 +852,12 @@ footer p{
 
   <div class="tables">
 
-    <div class="table-card">
+
+    <!-- TABLE 1 -->
+
+    <div
+      class="table-card"
+      onclick="selectTable(1)">
 
       <div class="table-info">
 
@@ -928,7 +872,11 @@ footer p{
     </div>
 
 
-    <div class="table-card">
+    <!-- TABLE 2 -->
+
+    <div
+      class="table-card"
+      onclick="selectTable(2)">
 
       <div class="table-info">
 
@@ -943,7 +891,11 @@ footer p{
     </div>
 
 
-    <div class="table-card">
+    <!-- TABLE 3 -->
+
+    <div
+      class="table-card"
+      onclick="selectTable(3)">
 
       <div class="table-info">
 
@@ -952,14 +904,17 @@ footer p{
         <span class="status available">
           Disponible
         </span>
-      
 
       </div>
 
     </div>
 
 
-    <div class="table-card">
+    <!-- TABLE 4 -->
+
+    <div
+      class="table-card"
+      onclick="selectTable(4)">
 
       <div class="table-info">
 
@@ -975,8 +930,7 @@ footer p{
 
   </div>
 
-</section
-
+</section>
 
 
 <!-- FOOTER -->
@@ -1031,8 +985,20 @@ footer p{
 </footer>
 
 
+<!-- MESSAGE -->
+
+<div
+  class="message"
+  id="message">
+
+  Votre réservation a été enregistrée !
+
+</div>
+
 
 <script>
+
+/* DATE */
 
 const today = new Date();
 
@@ -1040,35 +1006,69 @@ document.getElementById("date").textContent =
   today.toLocaleDateString("fr-FR");
 
 
+/* SELECTION TABLE */
+
 function selectTable(number){
 
-  // نبدلو table المختارة
+  /* changer la table dans réservation */
+
   document.getElementById("selectedTable").textContent =
     "Table " + number;
 
-  // ننحي selected من الكل
-  document.querySelectorAll(".table-card").forEach(function(card){
+
+  /* enlever la sélection des autres tables */
+
+  const cards =
+    document.querySelectorAll(".table-card");
+
+  cards.forEach(function(card){
+
     card.classList.remove("selected");
+
   });
 
-  // نعمل selected للـ table اللي ضغطت عليها
-  document.querySelectorAll(".table-card")[number - 1]
-    .classList.add("selected");
 
-  // نهبط للـ réservation
-  document.getElementById("reservation").scrollIntoView({
-    behavior:"smooth",
-    block:"center"
-  });
+  /* sélectionner la table choisie */
+
+  cards[number - 1].classList.add("selected");
+
+
+  /* aller vers réservation */
+
+  document
+    .getElementById("reservation")
+    .scrollIntoView({
+      behavior:"smooth",
+      block:"center"
+    });
+
 }
 
+
+/* RESERVATION */
 
 function reserve(){
 
   const table =
     document.getElementById("selectedTable").textContent;
 
-  alert("Réservation de " + table + " enregistrée !");
+
+  const message =
+    document.getElementById("message");
+
+
+  message.textContent =
+    "Réservation de " + table + " enregistrée !";
+
+
+  message.style.display = "block";
+
+
+  setTimeout(function(){
+
+    message.style.display = "none";
+
+  },3000);
 
 }
 
