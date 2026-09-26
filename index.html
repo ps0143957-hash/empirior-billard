@@ -324,22 +324,17 @@ nav{
 }
 
 .table-card{
-  height:180px;
-
-  border:1px solid #343434;
-  border-radius:12px;
-
-  overflow:hidden;
-  position:relative;
-
-  background-size:cover;
-  background-position:center;
-
-  transition:.25s;
-
   cursor:pointer;
+  -webkit-tap-highlight-color:transparent;
+}
 
-  user-select:none;
+.table-card.selected{
+  border:2px solid var(--red);
+  box-shadow:0 0 25px rgba(229,9,47,.45);
+}
+
+.table-card:active{
+  transform:scale(.98);
 }
 
 
@@ -827,30 +822,52 @@ footer p{
 
 <!-- TABLES -->
 
+<!-- TABLES -->
 <section class="tables-section" id="tables">
 
   <div class="section-title">
-
     <div>
-
-      <h2>
-        Nos <span>Tables</span>
-      </h2>
-
-      <p>
-        Choisissez votre table et réservez en un clic.
-      </p>
-
+      <h2>Nos <span>Tables</span></h2>
+      <p>Choisissez votre table et réservez en un clic.</p>
     </div>
 
     <a href="#reservation">
       Voir toutes les tables →
     </a>
-
   </div>
 
-
   <div class="tables">
+
+    <div class="table-card" onclick="selectTable(1)">
+      <div class="table-info">
+        <h3>Table 1</h3>
+        <span class="status available">Disponible</span>
+      </div>
+    </div>
+
+    <div class="table-card" onclick="selectTable(2)">
+      <div class="table-info">
+        <h3>Table 2</h3>
+        <span class="status available">Disponible</span>
+      </div>
+    </div>
+
+    <div class="table-card" onclick="selectTable(3)">
+      <div class="table-info">
+        <h3>Table 3</h3>
+        <span class="status available">Disponible</span>
+      </div>
+    </div>
+
+    <div class="table-card" onclick="selectTable(4)">
+      <div class="table-info">
+        <h3>Table 4</h3>
+        <span class="status available">Disponible</span>
+      </div>
+    </div>
+
+  </div>
+</section>
 
 
     <!-- TABLE 1 -->
@@ -1046,33 +1063,55 @@ function selectTable(number){
 
 
 /* RESERVATION */
+<script>
+
+const today = new Date();
+
+document.getElementById("date").textContent =
+  today.toLocaleDateString("fr-FR");
+
+
+function selectTable(number){
+
+  // تغيير table المختارة
+  document.getElementById("selectedTable").textContent =
+    "Table " + number;
+
+  // إزالة selected من جميع الطاولات
+  const cards = document.querySelectorAll(".table-card");
+
+  cards.forEach(function(card){
+    card.classList.remove("selected");
+  });
+
+  // إضافة selected للطاولة المضغوط عليها
+  if(cards[number - 1]){
+    cards[number - 1].classList.add("selected");
+  }
+
+  // الرجوع للـ réservation
+  document.getElementById("reservation").scrollIntoView({
+    behavior:"smooth",
+    block:"center"
+  });
+}
+
 
 function reserve(){
 
   const table =
     document.getElementById("selectedTable").textContent;
 
-
-  const message =
-    document.getElementById("message");
-
-
-  message.textContent =
-    "Réservation de " + table + " enregistrée !";
-
-
-  message.style.display = "block";
-
-
-  setTimeout(function(){
-
-    message.style.display = "none";
-
-  },3000);
+  alert(
+    "Réservation de " +
+    table +
+    " enregistrée !"
+  );
 
 }
 
 </script>
+
 
 
 </body>
